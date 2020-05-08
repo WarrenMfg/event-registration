@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>DMWT Alumni Event Registration</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="event-registration.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="logo.png" alt="UMUC logo" width="315" height="62">
+	</header>
+	<article>
+		<section>
+			<p id="tagline">We are delighted to welcome back our alumni for an evening of networking and fun. Event tickets are only $5.00 per person, not including a ticket processing fee of $0.50, and include light appetizers. To register for the event, fill out the form below. All fields with <span class="required">*</span> are required</p>
+		</section>
+
+		<section>
+			<p id="transactionTimer">Act fast! This transaction must be completed in <span id="timer">10:00</span> minutes</p>
+		</section>
+
+		<section>
+			<form id="contact" action="mailto:umuc@umuc.edu?subject=DMWT Alumni Event Registration" method="POST" enctype="text/plain" onsubmit="completePurchase(event);">
+				<fieldset>
+					<legend>Digital Media and Web Technology (DMWT) Alumni Event Registration</legend>
+
+					<label for="numTickets">How many tickets would you like to purchase? You can purchase up to 3 tickets. <span class="required">*</span></label>
+					<input type="text" id="numTickets" name="numTickets" class="small" maxlength="3" onchange="calculateTotal();" />
+					<span id="msgTickets" class="error"></span>
+
+					<label for="totalCost">Your total cost will be: </label>
+					<input type="text" id="totalCost" name="totalCost" class="small" value="$0.00" readonly />
+
+					<div id="contactInformation">
+						<label for="name">Name <span class="required">*</span></label>
+						<input type="text" id="name" name="name" maxlength="100" />
+						<span id="msgname" class="error"></span>
+
+						<label for="email">E-Mail Address <span class="required">*</span></label>
+						<input type="email" id="email" name="address" maxlength="60" />
+						<span id="msgemail" class="error"></span>
+
+						<div class="actionButtons">
+							<input type="submit" id="submitBtn" value="Purchase Tickets"/>
+							<input type="reset" id="reset" value="Reset" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</section>
+	</article>
+</body>
+
+</html>
